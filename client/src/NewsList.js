@@ -12,7 +12,7 @@ export default function NewsList({posts}) {
                 {...post}
             />
             </div>
-            <br />
+           
         </>
     })
     
