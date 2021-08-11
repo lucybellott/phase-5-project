@@ -16,11 +16,8 @@ export default function HomePage() {
         }, [])
         
 
-
-
      return (
         <div>
-           
             <Search />
             <NewsList  posts={posts}/>
         </div>

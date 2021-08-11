@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
- 
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /users
   def index
     users = User.all
-    render json: users
+    render json: users 
   end
 
   # GET /users/1
@@ -14,14 +15,10 @@ class UsersController < ApplicationController
   end
 
   # POST /users
-  def create
-    user = User.new(user_params)
-
-    if user.save
-      render json: user, status: :created
-    else
-      render json: user.errors, status: :unprocessable_entity
-    end
+  def create 
+    user = User.create!(user_params)
+    session[:user_id] = user.id
+    render json: user, status: :created
   end
 
   # PATCH/PUT /users/1
@@ -41,13 +38,20 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    
     def set_user
       user = User.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
-    def user_params 
+   def user_params 
       params.permit(:name, :username, :password_digest, :image, :level)
+    end
+    
+    def render_unprocessable_entity_response(exception)
+      render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
+    end
+  
+    def render_not_found_response
+        render json: { error: "User not found" }, status: :not_found
     end
 end

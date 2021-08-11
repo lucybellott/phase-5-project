@@ -11,9 +11,11 @@ export default function NewsCard({id, image, title, claim, fact, source_link, us
             <p>{fact}</p>
             <a href={source_link} target="_blank" >Source Link </a>
             <p>Posted by:</p>
-            <img style={{width: "5%"}} src={user.image}/>
-            <small style={{fontSize: "13px", fontWeight: "bold"}}>{user.name}</small>
-            <h5>Comments</h5>
+            <img style={{width: "9%"}} src={user.image}/>
+            <small style={{fontSize: "15px", fontWeight: "bold"}}> {user.name}</small>
+            
+            <h5 style={{marginTop: "20px"}}>Comments:</h5>
+            <p>deal with comments later</p>
         </div>
     )
 }

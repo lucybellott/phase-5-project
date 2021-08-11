@@ -6,7 +6,7 @@ export default function NewsList({posts}) {
     const postArray = posts.map((post) => {
         
         return <>
-            <div className="col-4" style={{ marginBottom: '20px',  }}>
+            <div className="col">
                 <NewsCard
                 key={post.id}
                 {...post}
@@ -17,8 +17,10 @@ export default function NewsList({posts}) {
     })
     
     return (
-        <div>
-            {postArray}
+        <div className="container" >
+            <div class="row row-cols-2">
+                {postArray}
+            </div>
         </div>
     )
 }
