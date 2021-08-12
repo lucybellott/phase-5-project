@@ -18,7 +18,7 @@ export default function Login({onLogin}) {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ username: username, password_digest: password }),
+                body: JSON.stringify({ username, password }),
             })
             if (res.ok) {
                 const user = await res.json()
@@ -27,8 +27,9 @@ export default function Login({onLogin}) {
                 history.push('/') 
             } else {
                 const err = await res.json()
-                setErrors(err.errors)
                 console.log(err)
+                setErrors(err.errors)
+                
             }
         };
         login()
@@ -79,7 +80,7 @@ export default function Login({onLogin}) {
     
     return (
         <div className="login" style ={{paddingTop: '50px'}}>
-        <h2>Sign up</h2>
+        <h2>Log in/Sign up</h2>
         <br/>
         {showSignUp ? 
         <>
@@ -92,7 +93,7 @@ export default function Login({onLogin}) {
             <input ype="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
             <button variant="success" type="submit">Create Account</button>
         </form>
-        <div>{errors.map(err => <p key={err}>{err}</p>)}</div>
+        <div> {errors.length > 0? errors.map(err => <p key={err}>{err}</p>) : null}</div>
         <div>
             <br/>
             Already have an account?
@@ -108,7 +109,7 @@ export default function Login({onLogin}) {
             <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
             <button variant="success" type="submit">Login</button>
         </form>
-        <div>{errors.map(err => <p key={err}>{err}</p>)}</div>
+        <div>{errors.length > 0? errors.map(err => <p key={err}>{err}</p>) : null}</div>
         <div>
             Don't have an account?
             <br/>

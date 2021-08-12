@@ -7,46 +7,46 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "clearing data...."
-User.destroy_all
 Comment.destroy_all
 Post.destroy_all
+User.destroy_all
 
 
 
 puts "seeding users..."
 User.create(name: 'Rick Astley', 
 username: "RickAstley", 
-password_digest: "pass123", 
+password: "pass123", 
 level: "standard", 
 image: "https://s.yimg.com/os/creatr-uploaded-images/2021-02/572c4830-721d-11eb-bb63-96959c3b62f2")
 
 User.create(name: 'Alf', 
 username: "Alf01", 
-password_digest: "pass123", 
+password: "pass123", 
 level: "standard", 
 image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/89/GordonShumway.png/220px-GordonShumway.png")
 
 User.create(name: 'Tina Turner', 
 username: "TinaTurner", 
-password_digest: "pass123", 
+password: "pass123", 
 level: "standard", 
 image: "https://i.guim.co.uk/img/media/5afcbbfdebdd701a3ab16b34b36ff74d442ec528/0_490_2951_1771/master/2951.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=75496118f9df7c8fb776133c9f83425e")
 
 User.create(name: 'Marty McFly', 
 username: "MartyMcFly", 
-password_digest: "pass123", 
+password: "pass123", 
 level: "standard", 
 image: "https://pbs.twimg.com/profile_images/115422070/mcfly_400x400.JPG")
 
 User.create(name: 'Cher', 
 username: "Cher01", 
-password_digest: "pass123", 
+password: "pass123", 
 level: "standard", 
 image: "https://www.biography.com/.image/t_share/MTgwOTk0NDgzMTA4NzE3NjU2/gettyimages-1000567242.jpg")
 
 User.create(name: 'Administrator', 
 username: "Adm", 
-password_digest: "pass123", 
+password: "pass123", 
 level: "adm", 
 image: "https://i.pinimg.com/originals/ea/ef/0f/eaef0f0758dd7e532c87227153a6bf6f.jpg")
 

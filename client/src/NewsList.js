@@ -18,7 +18,7 @@ export default function NewsList({posts}) {
     
     return (
         <div className="container" >
-            <div class="row row-cols-2">
+            <div className="row row-cols-2">
                 {postArray}
             </div>
         </div>

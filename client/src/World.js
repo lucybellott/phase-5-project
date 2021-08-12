@@ -1,9 +1,24 @@
-import React from 'react'
+import WorldCard from "./WorldCard"
 
-export default function World() {
+export default function World({posts}) {
+       const worldPosts = posts.filter((post) => {
+        return post.category == "World"
+        })
+    
+   const worldProps = worldPosts.map((worldPost) => {
+    
+        return <div className="col">
+            <WorldCard key ={worldPost.id}
+            {...worldPost}/>
+           </div> 
+    })
+   
+    
     return (
-        <div>
-            <p>Hello from World</p>
+        <div className="container" >
+        <div className="row row-cols-2">
+            {worldProps}
         </div>
+    </div>
     )
 }

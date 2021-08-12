@@ -14,23 +14,31 @@ import MyPosts from './MyPosts';
 function App() {
 
   const [user, setUser] = useState(null);
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
     fetch("./current_user")
     .then(resp => resp.json())
     .then(data => setUser(data)) 
   },[])
-  console.log(user)
+
+  
+    useEffect(() => {
+      fetch('http://localhost:3000/posts')
+      .then(resp => resp.json())
+      .then(data => setPosts(data))
+      }, [])
+  
 
 
 
   return (
     <div className="App">
-      <NavBar user={user} /> 
+      <NavBar user={user} setUser={setUser} /> 
       <Banner />
         <Switch>
           <Route exact path="/">
-            <HomePage user={user}/>
+            <HomePage user={user} posts={posts}/>
             </Route>
             <Route exact path="/login">
               <Login onLogin={setUser}/>
@@ -39,13 +47,13 @@ function App() {
               <PostForm user={user}/>
             </Route>
             <Route path="/US">
-              <Us/>
+              <Us posts={posts}/>
             </Route>
             <Route path="/world"> 
-              <World/>
+              <World posts={posts}/>
             </Route>
             <Route path="/myposts"> 
-              <MyPosts/>
+              <MyPosts posts={posts}/>
             </Route>
             {/* <Route path="/posts/:id" component={handleReadMore} /> */}
           </Switch>
