@@ -54,8 +54,8 @@ image: "https://i.pinimg.com/originals/ea/ef/0f/eaef0f0758dd7e532c87227153a6bf6f
 
 puts "seeding posts..."
 
-Post.create(user_id: User.all.sample.id,
-title: "Do the COVID-19 vaccines cause infertility?",
+Post.create(user_id: User.ids.sample,
+title: "Do the COVID-19 vaccines cause infertility?", 
 category: "World",
 image: "https://northernvirginiapediatrics.com/wp-content/uploads/Covid-19-vaccine-002.jpg",
 claim: "I have received serveral messages on WhatsApp claiming that many nurses are not getting their COVID shots because it's known to cause infertility and the media is trying to hide it from us",
@@ -66,7 +66,7 @@ Early on, we knew women could get pregnant (after getting COVID-19 vaccines) and
 source_link: "https://www.uchealth.org/today/infertility-and-covid-19-vaccines-get-the-facts/"
 )
 
-Post.create(user_id: User.all.sample.id,
+Post.create(user_id: User.ids.sample,
 title: "Posts Falsely Accuse U.S. Women’s Soccer Team of Disrespecting Veteran During Anthem",
 category: "U.S.",
 image: "https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/united-states-women-s-national-team-1625765264.jpg?crop=1.00xw:0.905xh;0,0.0951xh&resize=1200:*",
@@ -77,7 +77,7 @@ Members of the USWNT who were not facing the war veteran performing the national
 source_link: "https://www.reuters.com/article/factcheck-ussoccerwomen-flag/fact-check-members-of-the-u-s-womens-national-soccer-team-faced-flag-or-war-veteran-during-anthem-at-olympic-send-off-match-idUSL2N2OI2M0"
 )
 
-Post.create(user_id: User.all.sample.id,
+Post.create(user_id: User.ids.sample,
 title: "Viral 'Photo' of Earth, Venus and Jupiter Seen From Mars Is a Computer Image",
 category: "World",
 image: "https://pbs.twimg.com/media/Eu7saWyXAAk-dlm?format=png&name=small",
@@ -92,7 +92,7 @@ Since last Thursday's landing, Perseverance has taken thousands of photos from t
 source_link: "https://www.newsweek.com/earth-venus-jupiter-seen-mars-nasa-mars-perseverance-photo-fake-1571688"
 )
 
-Post.create(user_id: User.all.sample.id,
+Post.create(user_id: User.ids.sample,
 title: "No, Biden didn't tweet about Coca-Cola 'cultural reappropriation'",
 category: "U.S.",
 image: "https://pbs.twimg.com/media/Eu9MYGTXEAACdYw?format=jpg&name=900x900",
@@ -102,7 +102,7 @@ The claim surges amid backlash towards Coca-Cola, after a video circulating onli
 source_link: "https://www.reuters.com/article/uk-factcheck-fake-biden-coca-cola/fact-check-fabricated-joe-biden-tweet-about-coca-cola-idUSKBN2AO2PP"
 )
 
-Post.create(user_id: User.all.sample.id,
+Post.create(user_id: User.ids.sample,
 title: "Can garlic cure Coronavirus?",
 category: "World",
 image: "https://images.news18.com/ibnlive/uploads/2020/03/WhatsApp-Image-2020-03-05-at-10.57.44.jpeg?impolicy=website&width=0&height=0",
@@ -112,7 +112,7 @@ Their website states ‘Garlic is a healthy food that may have some antimicrobia
 source_link: "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters#garlic"
 )
 
-Post.create(user_id: User.all.sample.id,
+Post.create(user_id: User.ids.sample,
 title: "Is There Such a Thing as a Sugar High? Does sugar really make you hyper?",
 category: "World",
 image: "https://www.contracttesting.com/wp-content/uploads/2016/06/70018-candy-jars.jpg",

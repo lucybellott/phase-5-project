@@ -2,6 +2,7 @@ import './App.css';
 import HomePage from './HomePage';
 import {Switch, Route} from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import {useParams} from 'react-router-dom';
 import NavBar from './NavBar';
 import Login from './Login';
 import Banner from './Banner';
@@ -20,6 +21,8 @@ function App() {
     .then(data => setUser(data)) 
   },[])
   console.log(user)
+
+
 
   return (
     <div className="App">
@@ -44,6 +47,7 @@ function App() {
             <Route path="/myposts"> 
               <MyPosts/>
             </Route>
+            {/* <Route path="/posts/:id" component={handleReadMore} /> */}
           </Switch>
       </div>
   );

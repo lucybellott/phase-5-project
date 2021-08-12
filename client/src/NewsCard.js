@@ -6,11 +6,14 @@ export default function NewsCard({id, image, title, claim, fact, source_link, us
             <h3>{title}</h3>
             <img style={{width: "400px"}} src={image}/>
             <h5>Claim:</h5>
-            <p>{claim}</p>
-            <h5>Fact:</h5>
+            <p>{claim.substring(0, 250)}...</p>
+            <button>Read more</button>
+            
+            {/* <h5>Fact:</h5>
             <p>{fact}</p>
-            <a href={source_link} target="_blank" >Source Link </a>
-            <p>Posted by:</p>
+            <a href={source_link} target="_blank" >Source Link </a> */}
+            <br/>
+            <p style={{marginTop: "15px"}}>Posted by:</p>
             <img style={{width: "9%"}} src={user.image}/>
             <small style={{fontSize: "15px", fontWeight: "bold"}}> {user.name}</small>
             
