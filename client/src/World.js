@@ -9,7 +9,8 @@ export default function World({posts}) {
     
         return <div className="col">
             <WorldCard key ={worldPost.id}
-            {...worldPost}/>
+            {...worldPost}
+            post={worldPost}/>
            </div> 
     })
    

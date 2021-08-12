@@ -11,7 +11,8 @@ export default function Us({posts}) {
     
         return <div className="col">
             <UsCard key ={usPost.id}
-            {...usPost}/>
+            {...usPost}
+            post={usPost}/>
            </div> 
     })
    
