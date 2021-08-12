@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 
-export default function NewsCard({id, image, title, claim, fact, source_link, user, comments}) {
+export default function NewsCard({id, image, title, claim, fact, source_link, user, comments, post}) {
+    
+    
     return (
         <div>
             <h3>{title}</h3>
             <img style={{width: "400px"}} src={image}/>
             <h5>Claim:</h5>
             <p>{claim.substring(0, 250)}...</p>
-            <button>Read more</button>
+            <Link to={`/posts/${post.id}`}>Read more</Link>
             
-            {/* <h5>Fact:</h5>
-            <p>{fact}</p>
-            <a href={source_link} target="_blank" >Source Link </a> */}
             <br/>
             <p style={{marginTop: "15px"}}>Posted by:</p>
             <img style={{width: "9%"}} src={user.image}/>

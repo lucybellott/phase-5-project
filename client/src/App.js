@@ -10,6 +10,7 @@ import PostForm from './PostForm';
 import Us from './Us';
 import World from './World';
 import MyPosts from './MyPosts';
+import ExploreDetail from './ExploreDetail';
 
 function App() {
 
@@ -55,7 +56,10 @@ function App() {
             <Route path="/myposts"> 
               <MyPosts posts={posts}/>
             </Route>
-            {/* <Route path="/posts/:id" component={handleReadMore} /> */}
+            
+            <Route path='/posts/:id'>
+              <ExploreDetail posts={posts} />
+            </Route>
           </Switch>
       </div>
   );

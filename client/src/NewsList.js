@@ -10,6 +10,7 @@ export default function NewsList({posts}) {
                 <NewsCard
                 key={post.id}
                 {...post}
+                post={post}
             />
             </div>
            

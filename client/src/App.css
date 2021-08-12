@@ -43,3 +43,16 @@
   grid-column-gap: 1px;
   grid-row-gap: 1px;
   }
+
+  .hello-image{
+    width: 4%;
+  }
+  #explore-card {
+    display: flex;
+    /* text-align: left; */
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
