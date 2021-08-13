@@ -55,12 +55,7 @@ function App() {
               </Route>
               
               <Route path='/posts/:id'>
-              {posts.map((post) => {
-                return <ExploreDetail 
-                key={post.id}
-                comments={post.comments}
-                posts={posts} />
-              })}
+              <ExploreDetail posts={posts}/>
               </Route>
             </Switch>
         </div>

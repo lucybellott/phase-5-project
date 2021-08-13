@@ -1,19 +1,28 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import {useState, useEffect} from 'react'
 import Comment from './Comment'
 
-export default function ExploreDetail({posts, comments}) {
-   console.log(comments)
+export default function ExploreDetail({posts}) {
+  
     const { id } = useParams();
+    const[comments, setComments] = useState([])
   
     const singlePost= posts.filter((post) => post.id == id)
     
-    const commentArray = comments.map((comment) => {
-        return <Comment
-            key={comment.id}
-            {...comment}
-        />
-    })
+    useEffect(() => {
+        fetch('http://localhost:3000/comments')
+        .then(resp => resp.json())
+        .then(data => setComments(data))
+       
+        }, [])
+
+        const commentsArray = comments.map((comment) => {
+            return <Comment
+                key={comment.id}
+                {...comment}
+                />
+        })
 
         
     return (
@@ -35,7 +44,7 @@ export default function ExploreDetail({posts, comments}) {
                     <small style={{fontSize: "15px", fontWeight: "bold"}}> {post.user.name}</small>
                     
                     <h5 style={{marginTop: "20px"}}>Comments:</h5>
-                    <ul>{commentArray}</ul>
+                    <ul>{commentsArray}</ul>
                 </div>
                 
               ))}
