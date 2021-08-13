@@ -77,7 +77,7 @@ export default function Login({onLogin}) {
         setErrors([])
     }
     
-    
+    console.log(password)
     return (
         <div className="login" style ={{paddingTop: '50px'}}>
         <h2>Log in/Sign up</h2>
@@ -85,15 +85,18 @@ export default function Login({onLogin}) {
         {showSignUp ? 
         <>
         <form onSubmit={handleSignUp}>
+            
             <label>Name</label>
             <input type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/><br />
             <label>Username</label>
             <input type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/><br />
             <label>Password</label>
-            <input ype="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
+            <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
             <button variant="success" type="submit">Create Account</button>
         </form>
-        <div> {errors.length > 0? errors.map(err => <p key={err}>{err}</p>) : null}</div>
+        
+        <div style={{marginTop: "20px", color: "red"}}>{errors.map(err => <p key={err}>{err}</p>)}</div>
+        
         <div>
             <br/>
             Already have an account?
@@ -109,7 +112,9 @@ export default function Login({onLogin}) {
             <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
             <button variant="success" type="submit">Login</button>
         </form>
-        <div>{errors.length > 0? errors.map(err => <p key={err}>{err}</p>) : null}</div>
+       
+        <div style={{marginTop: "20px", color: "red"}}>{errors.map(err => <p key={err}>{err}</p>)}</div>
+        
         <div>
             Don't have an account?
             <br/>

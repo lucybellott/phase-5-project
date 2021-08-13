@@ -17,7 +17,11 @@ export default function ExploreDetail({posts}) {
        
         }, [])
 
-        const commentsArray = comments.map((comment) => {
+        const filteredComments = comments.filter((comment) => {
+            return comment.post.id == id
+        })
+
+        const commentsArray = filteredComments.map((comment) => {
             return <Comment
                 key={comment.id}
                 {...comment}

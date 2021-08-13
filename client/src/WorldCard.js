@@ -16,8 +16,6 @@ export default function WorldCard({id, title, category, image, claim, comments, 
             <img style={{width: "9%"}} src={user.image}/>
             <small style={{fontSize: "15px", fontWeight: "bold"}}> {user.name}</small>
             
-            <h5 style={{marginTop: "20px"}}>Comments:</h5>
-            <p>deal with comments later</p>
-    </div>
+        </div>
     )
 }

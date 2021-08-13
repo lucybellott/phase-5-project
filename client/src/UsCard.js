@@ -14,9 +14,7 @@ export default function UsCard({id, title, category, image, claim, comments, use
             <p style={{marginTop: "15px"}}>Posted by:</p>
             <img style={{width: "9%"}} src={user.image}/>
             <small style={{fontSize: "15px", fontWeight: "bold"}}> {user.name}</small>
-            
-            <h5 style={{marginTop: "20px"}}>Comments:</h5>
-            <p>deal with comments later</p>
+               
     </div>
     )
 }

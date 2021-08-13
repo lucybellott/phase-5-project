@@ -2,6 +2,7 @@ import React from 'react'
 import MyPostsCard from './MyPostsCard'
 
 export default function MyPosts({posts, user}) {
+    
     const myPosts = posts.filter((post) => {
         return post.user.username == user.username
         })
@@ -16,8 +17,10 @@ export default function MyPosts({posts, user}) {
     })
     
      return (
+       
         <div>
             {myProps}
-        </div>
+        </div> 
+        
     )
 }
