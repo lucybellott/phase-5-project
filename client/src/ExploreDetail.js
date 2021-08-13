@@ -1,13 +1,21 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import Comment from './Comment'
 
-export default function ExploreDetail({posts}) {
-    console.log(posts)
+export default function ExploreDetail({posts, comments}) {
+   console.log(comments)
     const { id } = useParams();
-    console.log(id)
+  
     const singlePost= posts.filter((post) => post.id == id)
-    console.log(singlePost)
+    
+    const commentArray = comments.map((comment) => {
+        return <Comment
+            key={comment.id}
+            {...comment}
+        />
+    })
 
+        
     return (
         <div class="card" style={{width: "40rem"}} id="explore-card">
             {
@@ -27,7 +35,7 @@ export default function ExploreDetail({posts}) {
                     <small style={{fontSize: "15px", fontWeight: "bold"}}> {post.user.name}</small>
                     
                     <h5 style={{marginTop: "20px"}}>Comments:</h5>
-                    <p>deal with comments later</p>
+                    <ul>{commentArray}</ul>
                 </div>
                 
               ))}

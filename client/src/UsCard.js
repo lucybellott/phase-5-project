@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-export default function UsCard({id, title, category, image, claim, fact, source_link, comments, user, post}) {
+export default function UsCard({id, title, category, image, claim, comments, user, post}) {
     return (
         <div>
             <h3>{title}</h3>

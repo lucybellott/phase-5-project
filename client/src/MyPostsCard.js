@@ -1,15 +1,9 @@
-
+import React from 'react'
 import {Link} from 'react-router-dom'
-// import Comment from './Comment'
 
-export default function NewsCard({id, image, title, claim, fact, source_link, user, comments, post}) {
+export default function MyPostsCard({id, title, category, image, claim, comments, user, post}) {
     
-    // const commentsArr = comments.map(comment => {
-    //     console.log(comment)
-    //     return <Comment key={comment.id} {...comment} />
-    // })
-
-
+   
 
     return (
         <div>
@@ -24,8 +18,8 @@ export default function NewsCard({id, image, title, claim, fact, source_link, us
             <img style={{width: "9%"}} src={user.image}/>
             <small style={{fontSize: "15px", fontWeight: "bold"}}> {user.name}</small>
             
-            {/* <h5 style={{marginTop: "20px"}}>Comments:</h5>
-            <ul>{commentsArr}</ul> */}
+            <h5 style={{marginTop: "20px"}}>Comments:</h5>
+            <p>deal with comments later</p>
         </div>
     )
 }

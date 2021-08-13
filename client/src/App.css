@@ -55,4 +55,13 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .comment-section {
+    background-color: rgba(231, 234, 238, 0.945);
+    border-radius: 25px;
+    width: 60%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    list-style-type: none;
+    }
   

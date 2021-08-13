@@ -2,7 +2,6 @@ import './App.css';
 import HomePage from './HomePage';
 import {Switch, Route} from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import {useParams} from 'react-router-dom';
 import NavBar from './NavBar';
 import Login from './Login';
 import Banner from './Banner';
@@ -30,39 +29,42 @@ function App() {
       .then(data => setPosts(data))
       }, [])
   
-
-
-
-  return (
-    <div className="App">
-      <NavBar user={user} setUser={setUser} /> 
-      <Banner />
-        <Switch>
-          <Route exact path="/">
-            <HomePage user={user} posts={posts}/>
-            </Route>
-            <Route exact path="/login">
-              <Login onLogin={setUser}/>
+     
+    return (
+      <div className="App">
+        <NavBar user={user} setUser={setUser} /> 
+        <Banner />
+          <Switch>
+            <Route exact path="/">
+              <HomePage user={user} posts={posts}/>
               </Route>
-            <Route path="/form">
-              <PostForm user={user}/>
-            </Route>
-            <Route path="/US">
-              <Us posts={posts}/>
-            </Route>
-            <Route path="/world"> 
-              <World posts={posts}/>
-            </Route>
-            <Route path="/myposts"> 
-              <MyPosts posts={posts}/>
-            </Route>
-            
-            <Route path='/posts/:id'>
-              <ExploreDetail posts={posts} />
-            </Route>
-          </Switch>
-      </div>
-  );
-}
+              <Route exact path="/login">
+                <Login onLogin={setUser}/>
+                </Route>
+              <Route path="/form">
+                <PostForm user={user}/>
+              </Route>
+              <Route path="/US">
+                <Us posts={posts}/>
+              </Route>
+              <Route path="/world"> 
+                <World posts={posts}/>
+              </Route>
+              <Route path="/myposts"> 
+                <MyPosts posts={posts} user={user}/>
+              </Route>
+              
+              <Route path='/posts/:id'>
+              {posts.map((post) => {
+                return <ExploreDetail 
+                key={post.id}
+                comments={post.comments}
+                posts={posts} />
+              })}
+              </Route>
+            </Switch>
+        </div>
+    );
+  }
 
-export default App;
+  export default App;
