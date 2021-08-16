@@ -16,8 +16,7 @@ export default function HomePage({posts, setPosts}) {
             .then((r) => r.json())
             .then(() => {
               const updatedPosts = posts.filter((post) => {
-                  console.log(post)
-                 return post.id !== (id)})
+                return post.id !== (id)})
                 setPosts(updatedPosts);
             });
         

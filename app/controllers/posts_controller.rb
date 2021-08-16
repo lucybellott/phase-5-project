@@ -37,6 +37,7 @@ class PostsController < ApplicationController
   def destroy
     post = set_post
     post.destroy
+    render json: {}
   end
 
   private
