@@ -17,7 +17,7 @@ export default function NavBar({user, setUser}) {
         logout()
     }
      return (
-        <div>
+        <div style={{height: "50px"}} className="nav-bar">
             {user ?
             <div>
                 <img className="hello-image"src={user.image}/>

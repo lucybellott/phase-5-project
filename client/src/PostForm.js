@@ -50,32 +50,52 @@ export default function PostForm({user, addPost}) {
          }
     
     return (
-        <div>
+        <div class="form-body" style={{marginTop:"0px"}}>
+        <div class="form-container" style={{marginTop:"15px", marginBottom:"15px"}}>
+            <div class="brand-logo" >
+                <img style={{width: "90%", borderRadius: "50%"}} src="https://i.pinimg.com/originals/ea/ef/0f/eaef0f0758dd7e532c87227153a6bf6f.jpg" alt="spy"/>
+            </div>
+            <div class="brand-title">The Fake News Buster</div>
+            <div class="form-inputs">
            <form onSubmit={handleSubmit}>
-               <label>Title</label>
-               <input type="text" value={title} onChange={handleTitle}/>
-               <br/>
                <label>Category</label>
-               <select onChange={handleSelect} value={selected}>
-                   <option value="Select">Select</option>
+                <select onChange={handleSelect} value={selected} style={{width:"100px",borderRadius:"20px", marginLeft:"10px", borderColor:"white"}}>
+                   <option selected>Select</option>
                    <option value="U.S.">U.S.</option>
                    <option value="World">World</option>
                 </select>
                 <br/>
+                <br/>
+               <label>Title</label>
+               <br/>
+               <input style={{width: "450px"}} type="text" value={title} onChange={handleTitle}/>
+               <br/>
+               <br/>
+                
                <label>Image Url</label>
-               <input value={image} onChange={handleImage} type="text"/>
+               <br/>
+               <input style={{width: "450px"}} value={image} onChange={handleImage} type="text"/>
+               <br/>
                <br/>
                <label>Claim</label>
-               <input type="text" value={claim} onChange={handleClaim}/>
+               <br/>
+               <input style={{width: "450px", height: "150px"}} type="text" value={claim} onChange={handleClaim}/>
+               <br/>
                <br/>
                <label>Fact</label>
-               <input type="text" value={fact} onChange={handleFact}/>
+               <br/>
+               <input style={{width: "450px", height: "150px"}} type="text" value={fact} onChange={handleFact}/>
+               <br/>
                <br/>
                <label>Link to Source</label>
-               <input type="text" value={link} onChange={handleLink}/>
                <br/>
-               <button type="submit">Submit</button>
+               <input style={{width: "450px"}} type="text" value={link} onChange={handleLink}/>
+               <br/>
+               <br/>
+               <button class="btn btn-dark" type="submit" style={{width:"120px", borderRadius:"20px"}}>Submit</button>
            </form>
+           </div>
+        </div>
         </div>
     )
 }

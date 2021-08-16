@@ -4,6 +4,7 @@ import './App.css';
 import NewsList from './NewsList'
 import Search from './Search'
 import { useState } from 'react';
+import Banner from './Banner'
 
 
 
@@ -34,6 +35,7 @@ export default function HomePage({posts, setPosts, user}) {
     
     return (
         <div>
+           <Banner />
             <Search posts={posts} handleSearch={handleSearch}/>
            
             <NewsList handleDelete={handleDelete} posts={filteredPosts} currentUser={user}/>

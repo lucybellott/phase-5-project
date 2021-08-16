@@ -41,7 +41,6 @@ function App() {
     return (
       <div className="App">
         <NavBar user={user} setUser={setUser} /> 
-        <Banner />
           <Switch>
             <Route exact path="/">
               <HomePage user={user} posts={posts} setPosts={setPosts}/>
