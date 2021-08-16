@@ -34,17 +34,7 @@ function App() {
           setPosts(postArray)
         }
 
-        const handleDelete = (id) => {
-          fetch(`http://localhost:3000/posts/${id}`, {
-            method: "DELETE",
-          })
-            .then((r) => r.json())
-            .then(() => {
-              const updatedPosts = posts.filter((post) => {
-                return post.id !== (id)})
-                setPosts(updatedPosts);
-            });
-        }
+      
      
     return (
       <div className="App">
@@ -52,7 +42,7 @@ function App() {
         <Banner />
           <Switch>
             <Route exact path="/">
-              <HomePage user={user} posts={posts} setPosts={setPosts} handleDelete={handleDelete}/>
+              <HomePage user={user} posts={posts} setPosts={setPosts}/>
               </Route>
               <Route exact path="/login">
                 <Login onLogin={setUser}/>

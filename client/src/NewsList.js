@@ -11,6 +11,7 @@ export default function NewsList({posts, handleDelete}) {
                 key={post.id}
                 {...post}
                 post={post}
+                handleDelete={handleDelete}
             />
             </div>
            

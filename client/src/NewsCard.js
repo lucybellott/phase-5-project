@@ -2,12 +2,17 @@
 import {Link} from 'react-router-dom'
 // import Comment from './Comment'
 
-export default function NewsCard({id, image, title, claim, fact, source_link, user, comments, post}) {
+export default function NewsCard({id, image, title, claim, user, post, handleDelete}) {
     
+    const handleDeleteClick = () => {
+        handleDelete(id) 
+      }
    
     return (
         <div>
             <h3>{title}</h3>
+            <button onClick={handleDeleteClick}>Delete</button>
+            <br/>
             <img style={{width: "400px"}} src={image}/>
             <h5>Claim:</h5>
             <p>{claim.substring(0, 250)}...</p>
