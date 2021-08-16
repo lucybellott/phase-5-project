@@ -5,12 +5,17 @@ import NewsList from './NewsList'
 import Search from './Search'
 
 
-export default function HomePage({posts}) {
 
-     return (
+export default function HomePage({posts, handleDelete}) {
+
+     
+   
+    
+    return (
         <div>
             <Search />
-            <NewsList  posts={posts}/>
+           
+            <NewsList handleDelete={handleDelete} posts={posts}/>
         </div>
     )
 }

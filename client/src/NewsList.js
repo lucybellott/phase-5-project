@@ -1,7 +1,7 @@
 import React from 'react'
 import NewsCard from './NewsCard'
 
-export default function NewsList({posts}) {
+export default function NewsList({posts, handleDelete}) {
     
     const postArray = posts.map((post) => {
         

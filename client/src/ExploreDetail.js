@@ -7,6 +7,7 @@ export default function ExploreDetail({posts}) {
   
     const { id } = useParams();
     const[comments, setComments] = useState([])
+    const[addComment, setAddComment] = useState("")
   
     const singlePost= posts.filter((post) => post.id == id)
     
@@ -21,12 +22,23 @@ export default function ExploreDetail({posts}) {
             return comment.post.id == id
         })
 
+        // const displayComment = (newComment) => {
+        //     let commentArray = [...comments, newComment]
+        //     return setComments(commentArray)
+        // }
+
         const commentsArray = filteredComments.map((comment) => {
             return <Comment
                 key={comment.id}
                 {...comment}
+                // addComment={addComment}
+                // setAddComment={setAddComment}
+                // displayComment={displayComment}
+               
                 />
         })
+
+       
 
         
     return (
@@ -46,12 +58,16 @@ export default function ExploreDetail({posts}) {
                     <p style={{marginTop: "15px"}}>Posted by:</p>
                     <img style={{width: "9%"}} src={post.user.image}/>
                     <small style={{fontSize: "15px", fontWeight: "bold"}}> {post.user.name}</small>
-                    
+                    </div>
+            ))}
+
                     <h5 style={{marginTop: "20px"}}>Comments:</h5>
-                    <ul>{commentsArray}</ul>
-                </div>
-                
-              ))}
+                    <ul style={{width: "600px"}}>{commentsArray}</ul>
+                    <form>
+                        <input type="text" placeholder="Add a comment"/>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <br/>
               </div>
     )
 }
