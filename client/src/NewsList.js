@@ -1,7 +1,7 @@
 import React from 'react'
 import NewsCard from './NewsCard'
 
-export default function NewsList({posts, handleDelete}) {
+export default function NewsList({posts, handleDelete, currentUser}) {
     
     const postArray = posts.map((post) => {
         
@@ -12,6 +12,7 @@ export default function NewsList({posts, handleDelete}) {
                 {...post}
                 post={post}
                 handleDelete={handleDelete}
+                currentUser={currentUser}
             />
             </div>
            

@@ -2,16 +2,20 @@
 import {Link} from 'react-router-dom'
 // import Comment from './Comment'
 
-export default function NewsCard({id, image, title, claim, user, post, handleDelete}) {
+export default function NewsCard({id, image, title, claim, user, post, handleDelete, currentUser}) {
     
     const handleDeleteClick = () => {
         handleDelete(id) 
       }
-   
+      console.log(post.user)
+      console.log(currentUser)
+      console.log(title)
     return (
         <div>
             <h3>{title}</h3>
+            {currentUser? post.user.id === currentUser.id || currentUser.level === "adm" ? 
             <button onClick={handleDeleteClick}>Delete</button>
+            : null : null }
             <br/>
             <img style={{width: "400px"}} src={image}/>
             <h5>Claim:</h5>
