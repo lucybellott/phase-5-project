@@ -23,7 +23,7 @@ export default function Login({onLogin}) {
             if (res.ok) {
                 const user = await res.json()
                 onLogin(user)
-                console.log(user)
+              
                 history.push('/') 
             } else {
                 const err = await res.json()

@@ -7,9 +7,7 @@ export default function NewsCard({id, image, title, claim, user, post, handleDel
     const handleDeleteClick = () => {
         handleDelete(id) 
       }
-      console.log(post.user)
-      console.log(currentUser)
-      console.log(title)
+     
     return (
         <div>
             <h3>{title}</h3>

@@ -62,7 +62,7 @@ function App() {
               </Route>
               
               <Route path='/posts/:id'>
-              <ExploreDetail posts={posts}/>
+              <ExploreDetail posts={posts} currentUser={user}/>
               </Route>
             </Switch>
         </div>

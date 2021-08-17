@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import Comment from './Comment'
 
-export default function ExploreDetail({posts}) {
-  
+export default function ExploreDetail({posts, currentUser}) {
+//   console.log(currentUser)
     const { id } = useParams();
     const[comments, setComments] = useState([])
     const[addComment, setAddComment] = useState("")
@@ -22,23 +22,49 @@ export default function ExploreDetail({posts}) {
             return comment.post.id == id
         })
 
-        // const displayComment = (newComment) => {
-        //     let commentArray = [...comments, newComment]
-        //     return setComments(commentArray)
-        // }
+        const displayComment = (newComment) => {
+            let commentArray = [...comments, newComment]
+            return setComments(commentArray)
+        }
 
         const commentsArray = filteredComments.map((comment) => {
             return <Comment
                 key={comment.id}
-                {...comment}
-                // addComment={addComment}
-                // setAddComment={setAddComment}
-                // displayComment={displayComment}
-               
+                {...comment} 
+                currentUser={currentUser}
                 />
         })
 
-       
+         const handleCommentSubmit = (e) =>{
+            e.preventDefault()
+            // console.log(id)
+            // console.log(currentUser)
+            let commentData = {
+                post_id: id,
+                user_id: currentUser.id,
+                content: addComment,
+                }
+    
+        fetch('http://localhost:3000/comments', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    },
+                body: JSON.stringify(commentData),
+                })
+                .then((res) => res.json())
+                // .then(console.log)
+                .then(singleComment => displayComment(singleComment))
+                
+                setAddComment("")
+    
+            }
+
+         
+    
+        const handleComment = (e) =>{
+            setAddComment(e.target.value)
+            }
 
         
     return (
@@ -63,8 +89,9 @@ export default function ExploreDetail({posts}) {
 
                     <h5 style={{marginTop: "20px"}}>Comments:</h5>
                     <ul style={{width: "600px"}}>{commentsArray}</ul>
-                    <form>
-                        <input type="text" placeholder="Add a comment"/>
+                    
+                    <form onSubmit={handleCommentSubmit}>
+                        <input onChange={handleComment} type="text" placeholder="Add a comment"/>
                         <button type="submit">Submit</button>
                     </form>
                     <br/>
