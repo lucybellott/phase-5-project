@@ -17,11 +17,11 @@ export default function NavBar({user, setUser}) {
         logout()
     }
      return (
-        <div style={{height: "50px"}} className="nav-bar">
+        <div style={{height: "60px"}} className="nav-bar">
             {user ?
             <div>
-                <img className="hello-image"src={user.image}/>
-                <small style={{fontSize:"larger"}}>Hello {user.name}</small>
+                <img className="hello-image"src={user.image} style={{borderRadius: "28px", marginRight:"10px"}}/>
+                <small style={{fontSize:"larger",marginRight:"10px" }}>Hello {user.name}</small>
                 <NavLink to="/">Home </NavLink> 
                 <NavLink to="/US"> U.S. </NavLink>
                 <NavLink to="/world"> World </NavLink>

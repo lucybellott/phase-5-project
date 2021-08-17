@@ -79,49 +79,65 @@ export default function Login({onLogin}) {
     
     console.log(password)
     return (
-        <div className="login" style ={{paddingTop: '50px'}}>
-        <h2>Log in/Sign up</h2>
+        <div className="form-body">
+        <div className="login" style={{marginTop:"30px", marginBottom:"15px"}}>
+        <div class="brand-logo" >
+            <img style={{width: "90%", borderRadius: "50%"}} src="https://i.pinimg.com/originals/ea/ef/0f/eaef0f0758dd7e532c87227153a6bf6f.jpg" alt="spy"/>
+        </div>
         <br/>
+        <h2>Log In</h2>
+        
+        <div class="form-inputs">
         {showSignUp ? 
         <>
         <form onSubmit={handleSignUp}>
             
             <label>Name</label>
-            <input type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/><br />
+            <input style={{width: "450px"}} type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/><br />
+            <br/>
             <label>Username</label>
-            <input type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/><br />
+            <input style={{width: "450px"}} type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/><br />
+            <br/>
             <label>Password</label>
-            <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
-            <button variant="success" type="submit">Create Account</button>
+            <input style={{width: "450px"}} type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
+            <br/>
+            <button style={{width:"150px", height:"50px", borderRadius:"20px"}} class="btn btn-danger" type="submit">Create Account</button>
         </form>
         
         <div style={{marginTop: "20px", color: "red"}}>{errors.map(err => <p key={err}>{err}</p>)}</div>
         
         <div>
             <br/>
-            Already have an account?
-            <button variant="success" onClick={switchToSignup}>Login here</button>
+           Already have an account?
+            <button style={{width:"110px", borderRadius:"20px", marginLeft:"10px"}} class="btn btn-dark" onClick={switchToSignup}>Login here</button>
         </div>
         </>
         : 
         <>
         <form onSubmit={handleLogin}>
             <label>Username</label>
-            <input type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/><br />
+            <br/>
+            <input style={{width: "450px"}} type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/><br />
+            <br/>
             <label>Password</label>
-            <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
-            <button variant="success" type="submit">Login</button>
+            <br/>
+            <input style={{width: "450px"}} type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
+            <br />
+            <button style={{width:"110px", borderRadius:"20px"}} class="btn btn-dark" type="submit">Login</button>
         </form>
        
         <div style={{marginTop: "20px", color: "red"}}>{errors.map(err => <p key={err}>{err}</p>)}</div>
         
-        <div>
+        <div style={{textAlign: "center"}}>
             Don't have an account?
             <br/>
-            <button variant="success" onClick={switchToLogin}>Sign up here</button>
+            <br/>
+            <button style={{width:"150px", height:"50px", borderRadius:"20px"}} class="btn btn-danger" onClick={switchToLogin}>Sign up here</button>
         </div>
         </>
         }
+        </div>
+        </div>
         </div>
     )
 }

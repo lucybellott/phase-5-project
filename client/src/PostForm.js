@@ -51,7 +51,7 @@ export default function PostForm({user, addPost}) {
     
     return (
         <div class="form-body" style={{marginTop:"0px"}}>
-        <div class="form-container" style={{marginTop:"15px", marginBottom:"15px"}}>
+        <div class="form-container" style={{marginTop:"30px", marginBottom:"15px"}}>
             <div class="brand-logo" >
                 <img style={{width: "90%", borderRadius: "50%"}} src="https://i.pinimg.com/originals/ea/ef/0f/eaef0f0758dd7e532c87227153a6bf6f.jpg" alt="spy"/>
             </div>
