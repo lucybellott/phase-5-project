@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 export default function Login({onLogin}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [image, setImage] = useState("")
     const [name, setName] = useState("")
     const [errors, setErrors] = useState([])
     const [showSignUp, setShowSignUp] = useState(false) 
@@ -47,7 +48,8 @@ export default function Login({onLogin}) {
                 body: JSON.stringify({
                     name,
                     username,
-                    password
+                    password,
+                    image
                 })
             });
             if(res.ok){
@@ -100,6 +102,9 @@ export default function Login({onLogin}) {
             <br/>
             <label>Password</label>
             <input style={{width: "450px"}} type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
+            <br/>
+            <label>Photo</label>
+            <input style={{width: "450px"}} type="text" placeholder="Image Url" value={image} onChange={e => setImage(e.target.value)} /><br/>
             <br/>
             <button style={{width:"150px", height:"50px", borderRadius:"20px"}} class="btn btn-danger" type="submit">Create Account</button>
         </form>

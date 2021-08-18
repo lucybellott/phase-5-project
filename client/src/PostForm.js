@@ -55,7 +55,9 @@ export default function PostForm({user, addPost}) {
             <div class="brand-logo" >
                 <img style={{width: "90%", borderRadius: "50%"}} src="https://i.pinimg.com/originals/ea/ef/0f/eaef0f0758dd7e532c87227153a6bf6f.jpg" alt="spy"/>
             </div>
-            <div class="brand-title">The Fake News Buster</div>
+            <div class="brand-title">Bust Fake News with us!</div>
+            <br/>
+            <em style={{fontSize: "small"}}>*Posts will be reviewed by the page Administrators and may be removed if found to be inaccurate</em>
             <div class="form-inputs">
            <form onSubmit={handleSubmit}>
                <label>Category</label>
