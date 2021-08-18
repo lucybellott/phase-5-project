@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
+  before_action :authorize
+  skip_before_action :authorize, only: [:index, :show, :create]
+
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /users
   def index
     users = User.all
-    render json: users 
+    render json: users  
   end
 
   # GET /users/1

@@ -69,6 +69,7 @@ export default function ExploreDetail({posts, currentUser}) {
         
     return (
         <div class="card" style={{width: "40rem"}} id="explore-card">
+            <div>
             {
             singlePost.map((post) => (
                
@@ -86,15 +87,20 @@ export default function ExploreDetail({posts, currentUser}) {
                     <small style={{fontSize: "15px", fontWeight: "bold"}}> {post.user.name}</small>
                     </div>
             ))}
+            </div>
 
                     <h5 style={{marginTop: "20px"}}>Comments:</h5>
                     <ul style={{width: "600px"}}>{commentsArray}</ul>
-                    
+                    { currentUser ?
+                    <div>
                     <form onSubmit={handleCommentSubmit}>
                         <input onChange={handleComment} type="text" placeholder="Add a comment"/>
                         <button type="submit">Submit</button>
                     </form>
                     <br/>
+                    </div>
+                    : null
+                    }
               </div>
     )
 }

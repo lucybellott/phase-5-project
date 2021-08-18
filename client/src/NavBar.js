@@ -20,14 +20,14 @@ export default function NavBar({user, setUser}) {
         <div style={{height: "60px"}} className="nav-bar">
             {user ?
             <div>
-                <img className="hello-image"src={user.image} style={{borderRadius: "28px", marginRight:"10px"}}/>
+                <img className="hello-image"src={user.image} style={{borderRadius: "28px", marginRight:"10px", width:"40px"}}/>
                 <small style={{fontSize:"larger",marginRight:"10px" }}>Hello {user.name}</small>
                 <NavLink to="/">Home </NavLink> 
                 <NavLink to="/US"> U.S. </NavLink>
                 <NavLink to="/world"> World </NavLink>
                 <NavLink to="/myposts"> My Posts </NavLink>
                 <NavLink to="/form"> Colaborate with us </NavLink>
-                <button onClick={handleLogout}>Log Out</button> 
+                <button onClick={handleLogout}>Log Out</button>  
                 </div>
                 :
                 <div>

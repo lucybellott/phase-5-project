@@ -1,11 +1,14 @@
 class CommentsController < ApplicationController
+  # before_action :authorize
+  # skip_before_action :authorize, only: [:index, :show]
+
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /comments
   def index
     comments = Comment.all
-    render json: comments
+    render json: comments 
   end
 
   # GET /comments/1

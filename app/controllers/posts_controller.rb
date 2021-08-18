@@ -1,11 +1,14 @@
 class PostsController < ApplicationController
+  before_action :authorize
+  skip_before_action :authorize, only: [:index, :show]
+  
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /posts
   def index
     posts = Post.all
-    render json: posts
+    render json: posts 
   end
 
   # GET /posts/1
