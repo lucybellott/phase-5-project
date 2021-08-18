@@ -13,10 +13,10 @@ export default function NewsCard({id, image, title, claim, user, post, handleDel
             <div className="row">
             <div class="col-6 col-sm-3">   
                 <div className="news-card">
-                    <h4>{title}</h4>
                     {currentUser? post.user.id === currentUser.id || currentUser.level === "adm" ? 
-                    <button onClick={handleDeleteClick}>Delete</button>
+                    <button style={{float:"right", width:"10%", borderWidth:"0px", fontWeight:"bold", fontSize:"large"}} onClick={handleDeleteClick}>❌</button>
                     : null : null }
+                    <h4>{title}</h4>
                     <br/>
                     <img style={{width: "300px", height:"200px"}} src={image}/>
                     <br/>
@@ -33,9 +33,9 @@ export default function NewsCard({id, image, title, claim, user, post, handleDel
                     <br/>
                     <br/>
            
-        </div>
-        </div>
-        </div>
+                </div>
+            </div>
+         </div>
         </div>
     )
 }

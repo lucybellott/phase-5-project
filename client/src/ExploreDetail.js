@@ -64,7 +64,7 @@ export default function ExploreDetail({posts, currentUser}) {
 
         
     return (
-        <div class="card" style={{width: "60rem", padding:"50px"}} id="explore-card">
+        <div class="card" style={{width: "60rem", padding:"100px"}} id="explore-card">
             <div>
             {
             singlePost.map((post) => (
@@ -73,30 +73,30 @@ export default function ExploreDetail({posts, currentUser}) {
                     <h3>{post.title}</h3>
                     <br/>
                     <img style={{width: "400px"}} src={post.image}/>
-                    <br/><br/>
+                    <br/><br/><br/>
                     <div style={{textAlign: "left"}}>
-                    <h5>Claim:</h5>
+                    <h5 style={{color: "red", fontWeight: "bold"}}>Claim:</h5>
                     <p>{post.claim}</p>
-                    <h5>Fact:</h5>
+                    <h5 style={{color:"green", fontWeight: "bold"}}>Fact:</h5>
                     <p>{post.fact}</p>
-                    <a href={post.source_link} target="_blank" >Source Link </a> 
+                    <a style={{fontWeight:"bold"}} href={post.source_link} target="_blank" >Source Link </a> 
                     <br/>
                     </div>
                     <p style={{marginTop: "15px"}}>Posted by:</p>
-                    <img style={{width: "9%", borderRadius:"50px", marginRight:"6px"}} src={post.user.image}/>
+                    <img style={{width: "9%", borderRadius:"50px", marginRight:"6px", marginTop:"-10px"}} src={post.user.image}/>
                     <small style={{fontSize: "17px", fontWeight: "bold"}}> {post.user.name}</small>
                     </div>
             ))}
             </div>
                     <div style={{textAlign: "left"}}>
-                    <h5 style={{marginTop: "20px"}}>Comments:</h5>
+                    <h5 style={{marginTop: "20px", marginLeft:"40px"}}>Comments:</h5>
                     <ul style={{width: "600px"}}>{commentsArray}</ul>
                     { currentUser ?
                     <div className="form-inputs">
                     <form onSubmit={handleCommentSubmit}>
-                        <input style={{width:"330px", marginLeft:"10", marginBottom:"2px"}} onChange={handleComment} type="text" placeholder="Add a comment"/>
+                        <input style={{width:"410px", marginLeft:"40px", marginBottom:"2px"}} onChange={handleComment} type="text" placeholder="Add a comment"/>
                         <br/>
-                        <button style={{marginLeft:"10", borderRadius:"50px"}} type="submit" class="btn btn-dark">Submit</button>
+                        <button style={{marginLeft:"50px", borderRadius:"50px"}} type="submit" class="btn btn-dark">Submit</button>
                     </form>
                     <br/>
                     </div>

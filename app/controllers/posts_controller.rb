@@ -25,18 +25,8 @@ class PostsController < ApplicationController
     
     end
 
-  # PATCH/PUT /posts/1
-  def update
-    post = set_post
-    
-    if post.update(post_params)
-      render json: post
-    else
-      render json: post.errors, status: :unprocessable_entity
-    end
-  end
 
-  # DELETE /posts/1
+ # DELETE /posts/1
   def destroy
     post = set_post
     post.destroy
@@ -61,4 +51,5 @@ class PostsController < ApplicationController
     def render_not_found_response
       render json: { error: "Post not found" }, status: :not_found
     end
+   
 end

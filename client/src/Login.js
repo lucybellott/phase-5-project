@@ -79,7 +79,7 @@ export default function Login({onLogin}) {
         setErrors([])
     }
     
-    console.log(password)
+    
     return (
         <div className="form-body">
         <div className="login" style={{marginTop:"30px", marginBottom:"15px"}}>

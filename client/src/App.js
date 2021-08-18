@@ -16,8 +16,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([])
 
-  
-
+ 
   useEffect(() => {
     fetch("./current_user")
     .then(resp => resp.json())

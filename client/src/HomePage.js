@@ -29,6 +29,7 @@ export default function HomePage({posts, setPosts, user}) {
      const handleSearch = (e) => setSearchValue(e.target.value)
  
      const filteredPosts = posts.filter((post) =>{
+      
          return (post.title.toLowerCase().includes(searchValue.toLowerCase()))
      })
      
