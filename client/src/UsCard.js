@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom'
 
 export default function UsCard({id, title, category, image, claim, comments, user, post}) {
     return (
-        <div style={{marginTop:"30px"}}>
+        <div className="news-card" style={{margin:"20px"}}>
             <h3>{title}</h3>
-            <img alt="user" style={{width: "400px"}} src={image}/>
+            <img alt="user" style={{width: "300px", height:"200px"}} src={image}/>
             <h5>Claim:</h5>
             <p>{claim.substring(0, 250)}...</p>
             <Link to={`/posts/${post.id}`}>Read more</Link>

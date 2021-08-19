@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 export default function NewsCard({id, image, title, claim, user, post, handleDelete, currentUser}) {
     
-    const handleDeleteClick = () => {
+    const handleDeleteClick = () => { 
         handleDelete(id) 
       }
      
@@ -18,7 +18,7 @@ export default function NewsCard({id, image, title, claim, user, post, handleDel
                     : null : null }
                     <h4>{title}</h4>
                     <br/>
-                    <img alt="user"  style={{width: "300px", height:"200px"}} src={image}/>
+                    <img alt="user" style={{width: "300px", height:"200px"}} src={image}/>
                     <br/>
                     <br/>
                     <h5>Claim:</h5>

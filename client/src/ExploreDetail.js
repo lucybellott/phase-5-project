@@ -53,7 +53,6 @@ export default function ExploreDetail({posts, currentUser}) {
                 })
                 .then((res) => res.json())
                 .then(singleComment => displayComment(singleComment))
-                
                 setAddComment("")
     
             }
