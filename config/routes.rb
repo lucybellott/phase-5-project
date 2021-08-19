@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/current_user", to: "sessions#user"
 
- get "/test", to: "users#anything"
+#  get "/test", to: "users#anything"
   
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

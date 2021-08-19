@@ -4,7 +4,6 @@ import {Switch, Route} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import Login from './Login';
-import Banner from './Banner';
 import PostForm from './PostForm';
 import Us from './Us';
 import World from './World';
@@ -27,7 +26,10 @@ function App() {
     useEffect(() => {
       fetch('http://localhost:3000/posts')
       .then(resp => resp.json())
-      .then(data => setPosts(data))
+      .then(data => {
+     
+        setPosts(data)
+      })
       }, [])
       
       const addPost = (newPost) => {
@@ -39,14 +41,15 @@ function App() {
      
     return (
       <div className="App">
+      
         <NavBar user={user} setUser={setUser} /> 
           <Switch>
             <Route exact path="/">
               <HomePage user={user} posts={posts} setPosts={setPosts}/>
               </Route>
               <Route exact path="/login">
-                <Login onLogin={setUser}/>
-                </Route>
+                <Login onLogin={setUser} />
+                </Route> 
               <Route path="/form">
                 <PostForm addPost={addPost} user={user}/>
               </Route>

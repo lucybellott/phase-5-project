@@ -14,6 +14,7 @@ export default function HomePage({posts, setPosts, user}) {
      const handleDelete = (id) => {
           fetch(`http://localhost:3000/posts/${id}`, {
             method: "DELETE",
+            credentials: 'include'
           })
             .then((r) => r.json())
             .then(() => {

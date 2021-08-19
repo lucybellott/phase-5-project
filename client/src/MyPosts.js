@@ -8,7 +8,7 @@ export default function MyPosts({posts, user}) {
         return <h3> You have no posts </h3>
     }
     const myPosts = posts.filter((post) => {
-        return post.user.username == user.username
+        return post.user.username === user.username
         })
 
     

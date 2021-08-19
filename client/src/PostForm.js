@@ -41,6 +41,7 @@ export default function PostForm({user, addPost}) {
                 'Content-Type': 'application/json',
                 },
             body: JSON.stringify(formData),
+            credentials: 'include'
             })
             .then((res) => res.json())
             .then(postData => addPost(postData))
@@ -50,19 +51,19 @@ export default function PostForm({user, addPost}) {
          }
     
     return (
-        <div class="form-body" style={{marginTop:"0px"}}>
-        <div class="form-container" style={{marginTop:"30px", marginBottom:"15px"}}>
-            <div class="brand-logo" >
+        <div className="form-body" style={{marginTop:"0px"}}>
+        <div className="form-container" style={{marginTop:"30px", marginBottom:"15px"}}>
+            <div className="brand-logo" >
                 <img style={{width: "90%", borderRadius: "50%"}} src="https://i.pinimg.com/originals/ea/ef/0f/eaef0f0758dd7e532c87227153a6bf6f.jpg" alt="spy"/>
             </div>
-            <div class="brand-title">Bust Fake News with us!</div>
+            <div className="brand-title">Bust Fake News with us!</div>
             <br/>
             <em style={{fontSize: "small"}}>*Posts will be reviewed by the page Administrators and may be removed if found to be inaccurate</em>
-            <div class="form-inputs">
+            <div className="form-inputs">
            <form onSubmit={handleSubmit}>
                <label>Category</label>
                 <select onChange={handleSelect} value={selected} style={{width:"100px",borderRadius:"20px", marginLeft:"10px", borderColor:"white"}}>
-                   <option selected>Select</option>
+                   <option value="selected">Select</option>
                    <option value="U.S.">U.S.</option>
                    <option value="World">World</option>
                 </select>
@@ -94,7 +95,7 @@ export default function PostForm({user, addPost}) {
                <input style={{width: "450px"}} type="text" value={link} onChange={handleLink}/>
                <br/>
                <br/>
-               <button class="btn btn-dark" type="submit" style={{width:"120px", borderRadius:"20px"}}>Submit</button>
+               <button className="btn btn-dark" type="submit" style={{width:"120px", borderRadius:"20px"}}>Submit</button>
            </form>
            </div>
         </div>

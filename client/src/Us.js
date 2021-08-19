@@ -4,7 +4,7 @@ import UsCard from './UsCard'
 export default function Us({posts}) {
     
     const usPosts = posts.filter((post) => {
-        return post.category == "U.S."
+        return post.category === "U.S."
         })
     
    const usProps = usPosts.map((usPost) => {

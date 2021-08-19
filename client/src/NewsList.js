@@ -5,18 +5,18 @@ export default function NewsList({posts, handleDelete, currentUser}) {
     
     const postArray = posts.map((post) => {
         
-        return <>
-            <div className="col">
+        return  <div key={post.id} className="col">
+                
                 <NewsCard
-                key={post.id}
+                
                 {...post}
                 post={post}
                 handleDelete={handleDelete}
                 currentUser={currentUser}
-            />
+                />
             </div>
            
-        </>
+        
     })
     
     return (

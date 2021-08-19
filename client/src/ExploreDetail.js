@@ -72,18 +72,18 @@ export default function ExploreDetail({posts, currentUser}) {
                  <div key={ post.id }>
                     <h3>{post.title}</h3>
                     <br/>
-                    <img style={{width: "400px"}} src={post.image}/>
+                    <img alt="user" style={{width: "400px"}} src={post.image}/>
                     <br/><br/><br/>
                     <div style={{textAlign: "left"}}>
                     <h5 style={{color: "red", fontWeight: "bold"}}>Claim:</h5>
                     <p>{post.claim}</p>
                     <h5 style={{color:"green", fontWeight: "bold"}}>Fact:</h5>
                     <p>{post.fact}</p>
-                    <a style={{fontWeight:"bold"}} href={post.source_link} target="_blank" >Source Link </a> 
+                    <a style={{fontWeight:"bold"}} href={post.source_link} target="_blank" rel="noreferrer" >Source Link </a> 
                     <br/>
                     </div>
                     <p style={{marginTop: "15px"}}>Posted by:</p>
-                    <img style={{width: "9%", borderRadius:"50px", marginRight:"6px", marginTop:"-10px"}} src={post.user.image}/>
+                    <img alt="user" style={{width: "9%", borderRadius:"50px", marginRight:"6px", marginTop:"-10px"}} src={post.user.image}/>
                     <small style={{fontSize: "17px", fontWeight: "bold"}}> {post.user.name}</small>
                     </div>
             ))}

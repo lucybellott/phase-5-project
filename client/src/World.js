@@ -2,7 +2,7 @@ import WorldCard from "./WorldCard"
 
 export default function World({posts}) {
        const worldPosts = posts.filter((post) => {
-        return post.category == "World"
+        return post.category === "World"
         })
     
    const worldProps = worldPosts.map((worldPost) => {

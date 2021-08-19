@@ -40,9 +40,10 @@ class UsersController < ApplicationController
     user.destroy
   end
 
-  def anything
-    byebug
-  end
+  # def anything
+  #   byebug
+  #   render json: {cookie: session[:lol]}
+  # end
 
   private
     

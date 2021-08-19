@@ -10,9 +10,10 @@ export default function Login({onLogin}) {
     const [showSignUp, setShowSignUp] = useState(false) 
     
     let history = useHistory();
-
+   
     function handleLogin(e) {
         e.preventDefault()
+        
         async function login(){
             const res = await fetch("/login", {
                 method: "POST",
@@ -24,7 +25,7 @@ export default function Login({onLogin}) {
             if (res.ok) {
                 const user = await res.json()
                 onLogin(user)
-              
+                console.log(user)
                 history.push('/') 
             } else {
                 const err = await res.json()
@@ -83,13 +84,13 @@ export default function Login({onLogin}) {
     return (
         <div className="form-body">
         <div className="login" style={{marginTop:"30px", marginBottom:"15px"}}>
-        <div class="brand-logo" >
+        <div className="brand-logo" >
             <img style={{width: "90%", borderRadius: "50%"}} src="https://i.pinimg.com/originals/ea/ef/0f/eaef0f0758dd7e532c87227153a6bf6f.jpg" alt="spy"/>
         </div>
         <br/>
         <h2>Log In</h2>
         
-        <div class="form-inputs">
+        <div className="form-inputs">
         {showSignUp ? 
         <>
         <form onSubmit={handleSignUp}>
