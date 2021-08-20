@@ -27,13 +27,28 @@ export default function ExploreDetail({posts, currentUser}) {
             return setComments(commentArray)
         }
 
-        const commentsArray = filteredComments.map((comment) => {
-            return <Comment
-                key={comment.id}
-                {...comment} 
-                currentUser={currentUser}
-                />
-        })
+        
+            function handleDeleteComment(deleteId) {
+                // console.log(deleteId)
+                fetch(`http://localhost:3000/comments/${deleteId}`, {
+                    method: "DELETE",
+                    credentials: 'include'
+                })
+                .then(() => {
+                    let updatedComments = comments.filter(comment => comment.id !== deleteId)
+                    setComments(updatedComments)
+                })
+        
+            
+            }
+            const commentsArray = filteredComments.map((comment) => {
+                return <Comment
+                    key={comment.id}
+                    {...comment} 
+                    currentUser={currentUser}
+                    handleDeleteComment={handleDeleteComment}
+                    />
+            })
 
          const handleCommentSubmit = (e) =>{
             e.preventDefault()
