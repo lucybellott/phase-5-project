@@ -1,7 +1,8 @@
 import React from 'react'
 
 export default function Comment({content, username, user, currentUser}) {
-            
+        // console.log(user)
+        // console.log(currentUser)    
    
 
     return (
@@ -10,6 +11,9 @@ export default function Comment({content, username, user, currentUser}) {
             <div className="comment-section">
             <img alt="user"style={{width: "10%", marginRight: "5px", borderRadius:"50px"}} src={user.image}/>
             <small style={{textAlign: 'left', fontWeight:"bold", fontSize:"90%"}}>{username}</small>
+            {user ? currentUser.username === user.username ?
+            <button style={{marginLeft:"250px"}} class="btn btn-link">Delete</button> 
+            : null :null}
             <li style={{textAlign: 'left', marginTop:"10px"}}>{content}</li>
             </div>
          </div>
