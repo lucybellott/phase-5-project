@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import Comment from './Comment'
 
+
 export default function ExploreDetail({posts, currentUser}) {
 
     const { id } = useParams();
@@ -78,9 +79,10 @@ export default function ExploreDetail({posts, currentUser}) {
 
         
     return (
+        <div>
+            <h1 style={{marginTop:"20px", marginBottom:"20px"}}>The Fake News Buster</h1>
         <div class="card" style={{width: "60rem", padding:"100px"}} id="explore-card">
-            <h1 style={{marginTop:"-60px", marginBottom:"40px"}}>The Fake News Buster</h1>
-            
+           
             <div>
             {
             singlePost.map((post) => (
@@ -120,6 +122,7 @@ export default function ExploreDetail({posts, currentUser}) {
                     : null}
                     </div>
               </div>
+         </div>
 
     )
 }
