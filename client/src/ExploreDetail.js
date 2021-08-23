@@ -79,11 +79,14 @@ export default function ExploreDetail({posts, currentUser}) {
         
     return (
         <div class="card" style={{width: "60rem", padding:"100px"}} id="explore-card">
+            <h1 style={{marginTop:"-60px", marginBottom:"40px"}}>The Fake News Buster</h1>
+            
             <div>
             {
             singlePost.map((post) => (
                
                  <div key={ post.id }>
+                     
                     <h3>{post.title}</h3>
                     <br/>
                     <img alt="user" style={{width: "400px"}} src={post.image}/>
@@ -108,14 +111,13 @@ export default function ExploreDetail({posts, currentUser}) {
                     { currentUser ?
                     <div className="form-inputs">
                     <form onSubmit={handleCommentSubmit}>
-                        <input style={{width:"410px", marginLeft:"40px", marginBottom:"2px"}} onChange={handleComment} type="text" placeholder="Add a comment"/>
+                        <input style={{width:"410px", marginLeft:"40px", marginBottom:"2px"}} onChange={handleComment} value={addComment} type="text" placeholder="Add a comment"/>
                         <br/>
                         <button style={{marginLeft:"50px", borderRadius:"50px"}} type="submit" class="btn btn-dark">Submit</button>
                     </form>
                     <br/>
                     </div>
-                    : null
-                    }
+                    : null}
                     </div>
               </div>
 

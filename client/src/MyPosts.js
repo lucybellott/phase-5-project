@@ -15,19 +15,20 @@ export default function MyPosts({posts, user}) {
    const myProps = myPosts.map((myPost) => {
     
         return <div className="col">
-            <MyPostsCard key ={myPost.id}
-            {...myPost}
-            post={myPost}
-            currentUser={user}/>
-           </div> 
+                <MyPostsCard key ={myPost.id}
+                {...myPost}
+                post={myPost}
+                currentUser={user}/>
+             </div> 
     })
     
      return (
        
-        <div>
-        
-            {myProps}
-           
+        <div className="container">
+            <h1 style={{marginTop:"20px"}}>My Posts</h1>
+            <div className="row row-cols-2">
+                {myProps}
+            </div>
         </div> 
         
     )
