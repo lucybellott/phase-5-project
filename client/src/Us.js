@@ -19,6 +19,7 @@ export default function Us({posts}) {
     
     return (
         <div className="container" >
+            <h1 style={{marginTop:"20px"}}>U.S.</h1>
         <div className="row row-cols-2">
             {usProps}
         </div>

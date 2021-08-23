@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authorize
-  # skip_before_action :authorize, only: [:index, :show, :create]
+  
 
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
@@ -24,26 +23,22 @@ class UsersController < ApplicationController
     render json: user, status: :created
   end
 
-  # PATCH/PUT /users/1
-  def update
-    user = set_user
-    if user.update(user_params)
-      render json: user
-    else
-      render json: user.errors, status: :unprocessable_entity
-    end
-  end
+  # # PATCH/PUT /users/1
+  # def update
+  #   user = set_user
+  #   if user.update(user_params)
+  #     render json: user
+  #   else
+  #     render json: user.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /users/1
-  def destroy
-    user = set_user
-    user.destroy
-  end
-
-  # def anything
-  #   byebug
-  #   render json: {cookie: session[:lol]}
+  # def destroy
+  #   user = set_user
+  #   user.destroy
   # end
+
 
   private
     

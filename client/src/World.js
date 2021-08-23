@@ -17,6 +17,7 @@ export default function World({posts}) {
     
     return (
         <div className="container" >
+            <h1 style={{marginTop:"20px"}}>World</h1>
         <div className="row row-cols-2">
             {worldProps}
         </div>

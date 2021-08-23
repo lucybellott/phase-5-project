@@ -37,6 +37,7 @@ export default function ExploreDetail({posts, currentUser}) {
                 .then(() => {
                     let updatedComments = comments.filter(comment => comment.id !== deleteId)
                     setComments(updatedComments)
+                    
                 })
         
             
@@ -69,8 +70,7 @@ export default function ExploreDetail({posts, currentUser}) {
                 .then((res) => res.json())
                 .then(singleComment => displayComment(singleComment))
                 setAddComment("")
-    
-            }
+                }
 
             const handleComment = (e) =>{
                 setAddComment(e.target.value)

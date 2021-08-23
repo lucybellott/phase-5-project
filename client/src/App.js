@@ -28,7 +28,7 @@ function App() {
       .then(resp => resp.json())
       .then(data => {
      
-        setPosts(data)
+        setPosts(data.reverse())
       })
       }, [])
       

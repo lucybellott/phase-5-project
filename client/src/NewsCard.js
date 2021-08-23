@@ -14,7 +14,9 @@ export default function NewsCard({id, image, title, claim, user, post, handleDel
             <div className="col-6 col-sm-3">   
                 <div className="news-card">
                     {currentUser? post.user.id === currentUser.id || currentUser.level === "adm" ? 
-                    <button style={{float:"right", width:"10%", borderWidth:"0px", fontWeight:"bold", fontSize:"large"}} onClick={handleDeleteClick}>❌</button>
+                    <button style={{float:"right", width:"10%", borderWidth:"0px", fontWeight:"bold", marginLeft:"3px", marginRight:"-7px"}} onClick={handleDeleteClick}>
+                    🗑
+                    </button>
                     : null : null }
                     <h4>{title}</h4>
                     <br/>

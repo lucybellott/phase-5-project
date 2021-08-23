@@ -12,22 +12,15 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1
-  def show
-    comment = set_comment
-    render json: comment 
-  end
+  # def show
+  #   comment = set_comment
+  #   render json: comment 
+  # end
 
   # POST /comments
   def create
     comment = Comment.create!(comment_params)
     render json: comment, status: :created
-  end
-
-  # PATCH/PUT /comments/1
-  def update
-    comment = set_comment
-    render json: comment
-    
   end
 
   # DELETE /comments/1
