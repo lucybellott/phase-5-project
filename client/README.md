@@ -25,3 +25,6 @@
 
 ## Comments
 ![comments](https://i.ibb.co/YXZ4cs9/comments.png)
+
+## Post an article
+![postform](https://i.ibb.co/T0jGXmV/postform.png)
