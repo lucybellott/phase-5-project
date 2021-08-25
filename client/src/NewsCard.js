@@ -10,7 +10,7 @@ export default function NewsCard({id, image, title, claim, user, post, handleDel
      
     return (
         <div className="container">
-            <div className="row">
+          <div className="row">
             <div className="col-6 col-sm-3">   
                 <div className="news-card">
                     {currentUser? post.user.id === currentUser.id || currentUser.level === "adm" ? 
@@ -38,6 +38,6 @@ export default function NewsCard({id, image, title, claim, user, post, handleDel
                 </div>
             </div>
          </div>
-        </div>
+    </div>
     )
 }

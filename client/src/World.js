@@ -8,10 +8,10 @@ export default function World({posts}) {
    const worldProps = worldPosts.map((worldPost) => {
     
         return <div className="col">
-            <WorldCard key ={worldPost.id}
-            {...worldPost}
-            post={worldPost}/>
-           </div> 
+                <WorldCard key ={worldPost.id}
+                {...worldPost}
+                post={worldPost}/>
+              </div> 
     })
    
     

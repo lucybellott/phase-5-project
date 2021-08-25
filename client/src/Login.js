@@ -83,67 +83,66 @@ export default function Login({onLogin}) {
     
     return (
         <div className="form-body">
-        <div className="login" style={{marginTop:"30px", marginBottom:"15px"}}>
-        <div className="brand-logo" >
+         <div className="login" style={{marginTop:"30px", marginBottom:"15px"}}>
+            <div className="brand-logo" >
             <img style={{width: "90%", borderRadius: "50%"}} src="https://i.pinimg.com/originals/ea/ef/0f/eaef0f0758dd7e532c87227153a6bf6f.jpg" alt="spy"/>
-        </div>
-        <br/>
-        <h2>Log In</h2>
-        
-        <div className="form-inputs">
-        {showSignUp ? 
-        <>
-        <form onSubmit={handleSignUp}>
+            </div>
+            <br/>
+            <h2>Log In</h2>
             
-            <label>Name</label>
-            <input style={{width: "450px"}} type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/><br />
-            <br/>
-            <label>Username</label>
-            <input style={{width: "450px"}} type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/><br />
-            <br/>
-            <label>Password</label>
-            <input style={{width: "450px"}} type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
-            <br/>
-            <label>Photo</label>
-            <input style={{width: "450px"}} type="text" placeholder="Image Url" value={image} onChange={e => setImage(e.target.value)} /><br/>
-            <br/>
-            <button style={{width:"150px", height:"50px", borderRadius:"20px"}} class="btn btn-danger" type="submit">Create Account</button>
-        </form>
+            <div className="form-inputs">
+                {showSignUp ? 
+                <>
+                <form onSubmit={handleSignUp}>
+                    <label>Name</label>
+                    <input style={{width: "450px"}} type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/><br />
+                    <br/>
+                    <label>Username</label>
+                    <input style={{width: "450px"}} type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/><br />
+                    <br/>
+                    <label>Password</label>
+                    <input style={{width: "450px"}} type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
+                    <br/>
+                    <label>Photo</label>
+                    <input style={{width: "450px"}} type="text" placeholder="Image Url" value={image} onChange={e => setImage(e.target.value)} /><br/>
+                    <br/>
+                    <button style={{width:"150px", height:"50px", borderRadius:"20px"}} class="btn btn-danger" type="submit">Create Account</button>
+                </form>
         
-        <div style={{marginTop: "20px", color: "red"}}>{errors.map(err => <p key={err}>{err}</p>)}</div>
-        
-        <div>
-            <br/>
-           Already have an account?
-            <button style={{width:"110px", borderRadius:"20px", marginLeft:"10px"}} class="btn btn-dark" onClick={switchToSignup}>Login here</button>
-        </div>
-        </>
-        : 
-        <>
-        <form onSubmit={handleLogin}>
-            <label>Username</label>
-            <br/>
-            <input style={{width: "450px"}} type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/><br />
-            <br/>
-            <label>Password</label>
-            <br/>
-            <input style={{width: "450px"}} type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
-            <br />
-            <button style={{width:"110px", borderRadius:"20px"}} class="btn btn-dark" type="submit">Login</button>
-        </form>
-       
-        <div style={{marginTop: "20px", color: "red"}}>{errors.map(err => <p key={err}>{err}</p>)}</div>
-        
-        <div style={{textAlign: "center"}}>
-            Don't have an account?
-            <br/>
-            <br/>
-            <button style={{width:"150px", height:"50px", borderRadius:"20px"}} class="btn btn-danger" onClick={switchToLogin}>Sign up here</button>
-        </div>
-        </>
-        }
-        </div>
-        </div>
+                <div style={{marginTop: "20px", color: "red"}}>{errors.map(err => <p key={err}>{err}</p>)}</div>
+                
+                <div>
+                    <br/>
+                Already have an account?
+                    <button style={{width:"110px", borderRadius:"20px", marginLeft:"10px"}} class="btn btn-dark" onClick={switchToSignup}>Login here</button>
+                </div>
+                </>
+                : 
+                <>
+                <form onSubmit={handleLogin}>
+                    <label>Username</label>
+                    <br/>
+                    <input style={{width: "450px"}} type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/><br />
+                    <br/>
+                    <label>Password</label>
+                    <br/>
+                    <input style={{width: "450px"}} type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/><br />
+                    <br />
+                    <button style={{width:"110px", borderRadius:"20px"}} class="btn btn-dark" type="submit">Login</button>
+                </form>
+            
+                <div style={{marginTop: "20px", color: "red"}}>{errors.map(err => <p key={err}>{err}</p>)}</div>
+                
+                <div style={{textAlign: "center"}}>
+                    Don't have an account?
+                    <br/>
+                    <br/>
+                    <button style={{width:"150px", height:"50px", borderRadius:"20px"}} class="btn btn-danger" onClick={switchToLogin}>Sign up here</button>
+                </div>
+                </>
+                }
+                </div>
+             </div>
         </div>
     )
 }

@@ -2,11 +2,12 @@ import React from 'react'
 import MyPostsCard from './MyPostsCard'
 
 export default function MyPosts({posts, user}) {
-    console.log(user)
-   
-    if (!user.posts.length > 0) {
-        return <h3> You have no posts </h3>
-    }
+    
+    // if (user.posts && user.posts.length < 0) {
+    //     console.log(user.posts)
+    //     return <h3> You have no posts </h3>
+    // }
+    
     const myPosts = posts.filter((post) => {
         return post.user.username === user.username
         })
@@ -19,7 +20,7 @@ export default function MyPosts({posts, user}) {
                 {...myPost}
                 post={myPost}
                 currentUser={user}/>
-             </div> 
+              </div> 
     })
     
      return (

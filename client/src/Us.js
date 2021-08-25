@@ -10,11 +10,11 @@ export default function Us({posts}) {
    const usProps = usPosts.map((usPost) => {
     
         return <div className="col">
-            <UsCard key ={usPost.id}
-            {...usPost}
-            post={usPost}/>
-           </div> 
-    })
+                <UsCard key ={usPost.id}
+                {...usPost}
+                post={usPost}/>
+              </div> 
+         })
    
     
     return (

@@ -15,6 +15,6 @@ export default function UsCard({id, title, category, image, claim, comments, use
             <img alt="user"  style={{width: "9%", borderRadius:"50px"}} src={user.image}/>
             <small style={{fontSize: "15px", fontWeight: "bold"}}> {user.name}</small>
                
-    </div>
+        </div>
     )
 }

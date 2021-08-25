@@ -30,7 +30,7 @@ export default function ExploreDetail({posts, currentUser}) {
 
         
             function handleDeleteComment(deleteId) {
-                // console.log(deleteId)
+                
                 fetch(`http://localhost:3000/comments/${deleteId}`, {
                     method: "DELETE",
                     credentials: 'include'
@@ -104,24 +104,24 @@ export default function ExploreDetail({posts, currentUser}) {
                     <p style={{marginTop: "15px"}}>Posted by:</p>
                     <img alt="user" style={{width: "9%", borderRadius:"50px", marginRight:"6px", marginTop:"-10px"}} src={post.user.image}/>
                     <small style={{fontSize: "17px", fontWeight: "bold"}}> {post.user.name}</small>
-                    </div>
+                </div>
             ))}
             </div>
-                    <div style={{textAlign: "left"}}>
+                <div style={{textAlign: "left"}}>
                     <h5 style={{marginTop: "20px", marginLeft:"40px"}}>Comments:</h5>
                     <ul style={{width: "600px"}}>{commentsArray}</ul>
                     { currentUser ?
                     <div className="form-inputs">
-                    <form onSubmit={handleCommentSubmit}>
-                        <input style={{width:"410px", marginLeft:"40px", marginBottom:"2px"}} onChange={handleComment} value={addComment} type="text" placeholder="Add a comment"/>
+                        <form onSubmit={handleCommentSubmit}>
+                            <input style={{width:"410px", marginLeft:"40px", marginBottom:"2px"}} onChange={handleComment} value={addComment} type="text" placeholder="Add a comment"/>
+                            <br/>
+                            <button style={{marginLeft:"50px", borderRadius:"50px"}} type="submit" class="btn btn-dark">Submit</button>
+                        </form>
                         <br/>
-                        <button style={{marginLeft:"50px", borderRadius:"50px"}} type="submit" class="btn btn-dark">Submit</button>
-                    </form>
-                    <br/>
                     </div>
                     : null}
-                    </div>
-              </div>
+                </div>
+            </div>
          </div>
 
     )

@@ -39,7 +39,6 @@ export default function HomePage({posts, setPosts, user}) {
         <div>
            <Banner />
             <Search posts={posts} handleSearch={handleSearch}/>
-           
             <NewsList handleDelete={handleDelete} posts={filteredPosts} currentUser={user}/>
         </div>
     )

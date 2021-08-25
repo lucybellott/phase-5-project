@@ -7,14 +7,13 @@ export default function NewsList({posts, handleDelete, currentUser}) {
         
         return  <div key={post.id} className="col">
                 
-                <NewsCard
-                
-                {...post}
-                post={post}
-                handleDelete={handleDelete}
-                currentUser={currentUser}
-                />
-            </div>
+                    <NewsCard
+                    {...post}
+                    post={post}
+                    handleDelete={handleDelete}
+                    currentUser={currentUser}
+                    />
+                </div>
            
         
     })

@@ -46,27 +46,27 @@ function App() {
           <Switch>
             <Route exact path="/">
               <HomePage user={user} posts={posts} setPosts={setPosts}/>
-              </Route>
-              <Route exact path="/login">
-                <Login onLogin={setUser} />
-                </Route> 
-              <Route path="/form">
+            </Route>
+            <Route exact path="/login">
+              <Login onLogin={setUser} />
+            </Route> 
+            <Route path="/form">
                 <PostForm addPost={addPost} user={user}/>
-              </Route>
-              <Route path="/US">
+            </Route>
+            <Route path="/US">
                 <Us posts={posts}/>
-              </Route>
-              <Route path="/world"> 
+            </Route>
+            <Route path="/world"> 
                 <World posts={posts}/>
-              </Route>
-              <Route path="/myposts"> 
+            </Route>
+            <Route path="/myposts"> 
                 <MyPosts posts={posts} user={user}/>
-              </Route>
+            </Route>
               
-              <Route path='/posts/:id'>
+            <Route path='/posts/:id'>
               <ExploreDetail posts={posts} currentUser={user}/>
-              </Route>
-            </Switch>
+            </Route>
+          </Switch>
         </div>
     );
   }
