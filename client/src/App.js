@@ -10,6 +10,7 @@ import World from './World';
 import MyPosts from './MyPosts';
 import ExploreDetail from './ExploreDetail';
 
+
 function App() {
 
   const [user, setUser] = useState(null);
@@ -30,6 +31,7 @@ function App() {
      
         setPosts(data.reverse())
       })
+      .catch(error => console.log(error))
       }, [])
       
       const addPost = (newPost) => {
@@ -37,11 +39,13 @@ function App() {
           setPosts(postArray)
         }
 
-      
+
+
      
     return (
       <div className="App">
-      
+       
+      {/* <Testing/> */}
         <NavBar user={user} setUser={setUser} /> 
           <Switch>
             <Route exact path="/">
