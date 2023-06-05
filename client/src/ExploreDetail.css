@@ -1,0 +1,72 @@
+.page-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    width: 60rem;
+    padding: 100px;
+  }
+  
+  .post-image {
+    width: 400px;
+  }
+  
+  .post-content {
+    text-align: left;
+  }
+  
+  .claim-heading {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .fact-heading {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .source-link {
+    font-weight: bold;
+  }
+  
+  .posted-by {
+    margin-top: 15px;
+  }
+  
+  .user-image {
+    width: 9%;
+    border-radius: 50px;
+    margin-right: 6px;
+    margin-top: -10px;
+  }
+  
+  .user-name {
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
+  .comments-heading {
+    margin-top: 20px;
+    margin-left: 40px;
+  }
+  
+  .comments-list {
+    width: 600px;
+  }
+  
+  .form-inputs {
+    margin-top: 20px;
+  }
+  
+  .comment-input {
+    width: 410px;
+    margin-left: 40px;
+    margin-bottom: 2px;
+  }
+  
+  .comment-submit-btn {
+    margin-left: 50px;
+    border-radius: 50px;
+  }
+  
