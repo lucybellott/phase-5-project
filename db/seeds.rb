@@ -42,7 +42,7 @@ User.create(name: 'Cher',
 username: "Cher01", 
 password: "pass123", 
 level: "standard", 
-image: "https://www.biography.com/.image/t_share/MTgwOTk0NDgzMTA4NzE3NjU2/gettyimages-1000567242.jpg")
+image: "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSfszi913gttNE__jLYU0meHRkJ-x7DyaMjwNewu4vAIu8ekRq0crJxo-bC0bNBxiiy39iCN-F7l0VzJ8s")
 
 User.create(name: 'Administrator', 
 username: "Adm", 
