@@ -1,0 +1,46 @@
+.login-container {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .brand-logo img {
+    width: 90%;
+    border-radius: 50%;
+  }
+  
+  .form-inputs input {
+    width: 450px;
+  }
+  
+  .form-inputs button {
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+  }
+  
+  .error-message {
+    margin-top: 20px;
+    color: red;
+  }
+  
+  .login-button {
+    width: 110px;
+    border-radius: 20px;
+  }
+  
+  .signup-button {
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+  }
+  
+  .switch-button {
+    width: 110px;
+    border-radius: 20px;
+    margin-left: 10px;
+  }
+  
+  .signup-container {
+    text-align: center;
+  }
+  
