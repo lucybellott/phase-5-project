@@ -42,7 +42,7 @@ User.create(name: 'Cher',
 username: "Cher01", 
 password: "pass123", 
 level: "standard", 
-image: "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSfszi913gttNE__jLYU0meHRkJ-x7DyaMjwNewu4vAIu8ekRq0crJxo-bC0bNBxiiy39iCN-F7l0VzJ8s")
+image: "https://media.allure.com/photos/634ec140279f106d1a6b9ea7/16:9/w_2560%2Cc_limit/cher%2520decades%2520fragrance.jpg")
 
 User.create(name: 'Administrator', 
 username: "Adm", 
