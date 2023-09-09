@@ -131,7 +131,7 @@ puts "seeding comments..."
 
 Comment.create([
   {
-    content: "I'm definitely sharing this one!",
+    content: "I'm definitely sharing this one!!",
     user_id: User.ids.sample,
     post_id: Post.ids.sample
   },
